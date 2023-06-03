@@ -7,6 +7,7 @@
 export function addPropertiesToObject(target: any, source: any) {
   for (let k of Object.keys(source || {})) {
     Object.defineProperty(target, k, {
+      configurable: true,
       get: () => source[k]
     })
   }
